@@ -17,7 +17,7 @@
 #include <sys/mman.h>
 #include <arpa/inet.h>
 
-#define SPIDEV               "/dev/spidev32766.0"
+#define SPIDEV "/dev/spidev1.0"
 
 
 FpgaIF::FpgaIF() {

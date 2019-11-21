@@ -7,8 +7,12 @@ ifdef pulpemu
 	CXX=arm-linux-gnueabihf-g++
 	SRCS += mem_zynq_apb_spi.cpp
 else ifdef pulpino
+	ifeq ($(VIVADO_VERSION),2015.1)
+		CXX=arm-xilinx-linux-gnueabi-g++
+	else
+		CXX=arm-linux-gnueabihf-g++
+	endif
 	CXXFLAGS+=-DFPGA
-	CXX=arm-xilinx-linux-gnueabi-g++
 	SRCS += mem_zynq_spi.cpp
 else
 	CXX=g++
